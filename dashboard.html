@@ -3,39 +3,44 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Riedel Dashboard</title>
+<title>Riedel Links</title>
 <style>
-body{margin:0;font-family:Arial,sans-serif;display:flex;height:100vh;border:1px solid #e0e0e0;border-radius:6px;overflow:hidden}
-.sidebar{width:240px;background-color:#0c6bc4;color:#fff;display:flex;flex-direction:column}
-.sidebar-header{padding:20px;font-size:18px;font-weight:bold;border-bottom:1px solid rgba(255,255,255,0.2)}
-.sidebar a{padding:14px 20px;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.1);display:block;transition:background .2s}
-.sidebar a:hover{background:rgba(255,255,255,0.15)}
-.sidebar a.active{background:rgba(255,255,255,0.25)}
-.content{flex:1;background:#f9f9f9;display:flex;align-items:center;justify-content:center;color:#777;font-size:16px;padding:20px;text-align:center}
+body{margin:0;font-family:Arial,sans-serif;background:#f9f9f9;color:#333}
+h2{color:#866d4b;font-size:18px;border-bottom:2px solid #866d4b;padding-bottom:6px;margin-bottom:10px}
+.container{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;padding:30px}
+.column{background:#fff;border:1px solid #e0e0e0;border-radius:6px;padding:20px;box-shadow:0 2px 4px rgba(0,0,0,0.05)}
+a{display:block;color:#866d4b;text-decoration:none;margin:8px 0;transition:color .2s}
+a:hover{color:#5d4d35;text-decoration:underline}
+@media(max-width:1200px){.container{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:800px){.container{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.container{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="sidebar">
-  <div class="sidebar-header">Riedel Dashboard</div>
-  <a href="https://riedelimmobilienmuc.sharepoint.com/sites/Archiv/Freigegebene%20Dokumente/Forms/AllItems.aspx" target="_blank">📁 Archiv</a>
-  <a href="https://www.haus-und-grund-muenchen.de/leistungen/musterformulare/musterformulare-bearbeiten" target="_blank">📄 Musterformulare</a>
-  <a href="https://www.imv-online.de/imvonline_anbietersuche.php)" target="_blank">🏢 IMV Anbietersuche</a>
-  <a href="https://riedelimmobilienmuc.sharepoint.com/:p:/s/Personal/IQC0nQlfpt9MSYCqTNYEx8LLAbKngayRr2VeyYLYtS824Zk?e=5w4xMz" target="_blank">👥 Personal</a>
-  <a href="https://riedel-immobilien.app.personio.com/my-desk" target="_blank">🧾 Personio</a>
-  <a href="https://form.asana.com/?k=VItJblw0ZgaryFE4QdaMdA&d=1211880802459258" target="_blank">📝 Asana Formular</a>
+<div class="container">
+  <div class="column">
+    <h2>Dokumente</h2>
+    <a href="https://riedelimmobilienmuc.sharepoint.com/sites/Archiv/Freigegebene%20Dokumente/Forms/AllItems.aspx" target="_blank">📁 Archiv</a>
+    <a href="https://www.haus-und-grund-muenchen.de/leistungen/musterformulare/musterformulare-bearbeiten" target="_blank">📄 Musterformulare</a>
+  </div>
+  <div class="column">
+    <h2>Recherche</h2>
+    <a href="https://www.imv-online.de/imvonline_anbietersuche.php" target="_blank">🏢 IMV Anbietersuche</a>
+  </div>
+  <div class="column">
+    <h2>Personal</h2>
+    <a href="https://riedelimmobilienmuc.sharepoint.com/:p:/s/Personal/IQC0nQlfpt9MSYCqTNYEx8LLAbKngayRr2VeyYLYtS824Zk?e=5w4xMz" target="_blank">👥 Mitarbeitende / Dokumente</a>
+    <a href="https://riedel-immobilien.app.personio.com/my-desk" target="_blank">🧾 Personio</a>
+  </div>
+  <div class="column">
+    <h2>Organisation</h2>
+    <a href="https://form.asana.com/?k=VItJblw0ZgaryFE4QdaMdA&d=1211880802459258" target="_blank">📝 Asana Formular</a>
+  </div>
+  <div class="column">
+    <h2>Weitere Links</h2>
+    <a href="https://www.propstack.de/" target="_blank">🌐 Propstack</a>
+    <a href="https://riedel-immobilien.de" target="_blank">🏠 Riedel Website</a>
+  </div>
 </div>
-<div class="content">
-  Wähle links einen Bereich aus – der Inhalt öffnet sich in einem neuen Tab.
-</div>
-<script>
-document.querySelectorAll('.sidebar a').forEach(link=>{
-  link.addEventListener('click',e=>{
-    e.preventDefault();
-    document.querySelectorAll('.sidebar a').forEach(a=>a.classList.remove('active'));
-    link.classList.add('active');
-    window.open(link.href,'_blank','noopener,noreferrer');
-  });
-});
-</script>
 </body>
 </html>
