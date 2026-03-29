@@ -1,0 +1,34 @@
+<div style="display:flex; width:100%; height:600px; font-family:Arial, sans-serif; border:1px solid #e0e0e0; border-radius:6px; overflow:hidden;">
+  
+  <!-- Linke Navigationsleiste -->
+  <div style="width:240px; background-color:#0c6bc4; color:#fff; display:flex; flex-direction:column;">
+    <div style="padding:20px; font-size:18px; font-weight:bold; border-bottom:1px solid rgba(255,255,255,0.2);">
+      Riedel Dashboard
+    </div>
+    <a href="#" onclick="loadPage('[riedelimmobilienmuc.sharepoint.com](https://riedelimmobilienmuc.sharepoint.com/sites/Archiv/Freigegebene%20Dokumente/Forms/AllItems.aspx)')" style="padding:14px 20px; color:white; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.1); display:block;">📁 Archiv</a>
+    <a href="#" onclick="loadPage('[haus-und-grund-muenchen.de](https://www.haus-und-grund-muenchen.de/leistungen/musterformulare/musterformulare-bearbeiten)')" style="padding:14px 20px; color:white; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.1); display:block;">📄 Musterformulare</a>
+    <a href="#" onclick="loadPage('[imv-online.de](https://www.imv-online.de/imvonline_anbietersuche.php)')" style="padding:14px 20px; color:white; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.1); display:block;">🏢 IMV Anbietersuche</a>
+    <a href="#" onclick="loadPage('[riedelimmobilienmuc.sharepoint.com](https://riedelimmobilienmuc.sharepoint.com/:p:/s/Personal/IQC0nQlfpt9MSYCqTNYEx8LLAbKngayRr2VeyYLYtS824Zk?e=5w4xMz)')" style="padding:14px 20px; color:white; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.1); display:block;">👥 Personal</a>
+    <a href="#" onclick="loadPage('[riedel-immobilien.app.personio.com](https://riedel-immobilien.app.personio.com/my-desk)')" style="padding:14px 20px; color:white; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.1); display:block;">🧾 Personio</a>
+    <a href="#" onclick="loadPage('[form.asana.com](https://form.asana.com/?k=VItJblw0ZgaryFE4QdaMdA&d=1211880802459258)')" style="padding:14px 20px; color:white; text-decoration:none; border-bottom:1px solid rgba(255,255,255,0.1); display:block;">📝 Asana Formular</a>
+  </div>
+
+  <!-- Hauptinhalt -->
+  <div style="flex:1; background:#f9f9f9;">
+    <iframe 
+      id="contentFrame"
+      src="[riedelimmobilienmuc.sharepoint.com](https://riedelimmobilienmuc.sharepoint.com/sites/Archiv/Freigegebene%20Dokumente/Forms/AllItems.aspx)"
+      style="border:none; width:100%; height:100%;"
+      loading="lazy">
+    </iframe>
+  </div>
+</div>
+
+<script>
+  const links = document.querySelectorAll('a[onclick]');
+  function loadPage(url) {
+    document.getElementById('contentFrame').src = url;
+    links.forEach(l => l.style.backgroundColor = '');
+    event.target.style.backgroundColor = 'rgba(255,255,255,0.15)';
+  }
+</script>
