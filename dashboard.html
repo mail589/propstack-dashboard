@@ -1,1 +1,41 @@
-
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riedel Dashboard</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;display:flex;height:100vh;border:1px solid #e0e0e0;border-radius:6px;overflow:hidden}
+.sidebar{width:240px;background-color:#0c6bc4;color:#fff;display:flex;flex-direction:column}
+.sidebar-header{padding:20px;font-size:18px;font-weight:bold;border-bottom:1px solid rgba(255,255,255,0.2)}
+.sidebar a{padding:14px 20px;color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,0.1);display:block;transition:background .2s}
+.sidebar a:hover{background:rgba(255,255,255,0.15)}
+.sidebar a.active{background:rgba(255,255,255,0.25)}
+.content{flex:1;background:#f9f9f9;display:flex;align-items:center;justify-content:center;color:#777;font-size:16px;padding:20px;text-align:center}
+</style>
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebar-header">Riedel Dashboard</div>
+  <a href="[riedelimmobilienmuc.sharepoint.com](https://riedelimmobilienmuc.sharepoint.com/sites/Archiv/Freigegebene%20Dokumente/Forms/AllItems.aspx)" target="_blank">📁 Archiv</a>
+  <a href="[haus-und-grund-muenchen.de](https://www.haus-und-grund-muenchen.de/leistungen/musterformulare/musterformulare-bearbeiten)" target="_blank">📄 Musterformulare</a>
+  <a href="[imv-online.de](https://www.imv-online.de/imvonline_anbietersuche.php)" target="_blank">🏢 IMV Anbietersuche</a>
+  <a href="[riedelimmobilienmuc.sharepoint.com](https://riedelimmobilienmuc.sharepoint.com/:p:/s/Personal/IQC0nQlfpt9MSYCqTNYEx8LLAbKngayRr2VeyYLYtS824Zk?e=5w4xMz)" target="_blank">👥 Personal</a>
+  <a href="[riedel-immobilien.app.personio.com](https://riedel-immobilien.app.personio.com/my-desk)" target="_blank">🧾 Personio</a>
+  <a href="[form.asana.com](https://form.asana.com/?k=VItJblw0ZgaryFE4QdaMdA&d=1211880802459258)" target="_blank">📝 Asana Formular</a>
+</div>
+<div class="content">
+  Wähle links einen Bereich aus – der Inhalt öffnet sich in einem neuen Tab.
+</div>
+<script>
+document.querySelectorAll('.sidebar a').forEach(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+    document.querySelectorAll('.sidebar a').forEach(a=>a.classList.remove('active'));
+    link.classList.add('active');
+    window.open(link.href,'_blank','noopener,noreferrer');
+  });
+});
+</script>
+</body>
+</html>
