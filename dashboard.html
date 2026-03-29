@@ -50,7 +50,6 @@
     color: #777;
     font-size: 16px;
     padding: 20px;
-    text-align: center;
   }
 </style>
 </head>
@@ -60,26 +59,23 @@
     <div class="sidebar-header">Riedel Dashboard</div>
     <a href="[riedelimmobilienmuc.sharepoint.com](https://riedelimmobilienmuc.sharepoint.com/sites/Archiv/Freigegebene%20Dokumente/Forms/AllItems.aspx)" target="_blank">📁 Archiv</a>
     <a href="[haus-und-grund-muenchen.de](https://www.haus-und-grund-muenchen.de/leistungen/musterformulare/musterformulare-bearbeiten)" target="_blank">📄 Musterformulare</a>
-    <a href="[imv-online.de](https://www.imv-online.de/imvonline_anbietersuche.php)" target="_blank">🏢 IMV Anbietersuche</a>
+    <a href="[imv-online.de](https://www.imv-online.de/imvonline_anbietersuche.php)" target="_blank">🏢 IMV Anbietersuche</a>
     <a href="[riedelimmobilienmuc.sharepoint.com](https://riedelimmobilienmuc.sharepoint.com/:p:/s/Personal/IQC0nQlfpt9MSYCqTNYEx8LLAbKngayRr2VeyYLYtS824Zk?e=5w4xMz)" target="_blank">👥 Personal</a>
-    <a href="[riedel-immobilien.app.personio.com](https://riedel-immobilien.app.personio.com/my-desk)" target="_blank">🧾 Personio</a>
-    <a href="[form.asana.com](https://form.asana.com/?k=VItJblw0ZgaryFE4QdaMdA&d=1211880802459258)" target="_blank">📝 Asana Formular</a>
+    <a href="[riedel-immobilien.app.personio.com](https://riedel-immobilien.app.personio.com/my-desk)" target="_blank">🧾 Personio</a>
+    <a href="[form.asana.com](https://form.asana.com/?k=VItJblw0ZgaryFE4QdaMdA&d=1211880802459258)" target="_blank">📝 Asana Formular</a>
   </div>
 
   <div class="content">
-    Wähle links einen Bereich aus — der Inhalt öffnet sich in einem neuen Tab.
+    Wähle links einen Bereich aus – der Inhalt öffnet sich in einem neuen Tab.
   </div>
 
   <script>
-    // Öffnen der Links sicher ermöglichen (auch innerhalb Propstack-iFrame)
+    // Aktiv-Highlight und sicheres Öffnen
     document.querySelectorAll('.sidebar a').forEach(link => {
       link.addEventListener('click', e => {
         e.preventDefault();
-        // Entferne aktive Klasse von allen
         document.querySelectorAll('.sidebar a').forEach(a => a.classList.remove('active'));
-        // Markiere den aktiven Link
         link.classList.add('active');
-        // Öffne das Ziel in neuem Tab
         window.open(link.href, '_blank', 'noopener,noreferrer');
       });
     });
